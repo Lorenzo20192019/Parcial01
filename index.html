@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>RESERVACION_DE_HOTEL</title>
+    <!-- requiered meta tagas always come first -->
+
+    <script>
+        function iniciar() {
+            edad=document.getElementById("miedad");
+            edad.addEventListener("change",cambiarrango,false);
+            document.informacion.addEventListener("invalid",validacion(),true);
+            docuement.getElementById("enviar").addEventListener("click", enviar. false);
+            nombre1=document.getElementById("nombre");
+            nombre2=document.getElementById("apellido");
+            nombre1.addEventListener("input", vaildacion, false);
+            nombre2.addEventListener("input", validacion, false);
+            vaildacion();
+        }
+        function cambiarrango(){
+            var salida=document.getElementById("rango");
+            var calc = edad.value-20;
+            if(calc<20){
+                calc=0;
+                edad.value=20;
+            }
+            salida.innerHTML=calc+' a '+edad.value;
+        }
+        function validacion() {
+            var elemento=e.target;
+            elemento.style.background='#FFDDDD';
+            if(nombre1.value==''&&nombre2.value==''){
+                nombre1.setCustomValidity('inserte al menos un nombre');
+                nombre1.style.background='#FFDDDD';
+            }else{
+                nombre1.setCustomValidity('');
+                nombre1.style.background='#FFFFFF';
+            }
+
+        }
+
+        function enviar(){
+            var valido=document.informacion.checkValidity();
+            if(valido){
+                document.informacion.submit();
+            }
+        }
+
+
+
+        window.addEventListener("load",iniciar,false);
+    </script>
+    <style type="text/css">
+        body{
+            background: url(images/fondo2.png) repeat 0 0;
+        }
+    </style>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <! --Boostrap css -->
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <!-- agregamos css front awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+<style>
+    .contenedor{
+        width: 350px;
+        border: solid 3px #a71d2a;
+    }
+    .contenedor2{
+        width: 1500px;
+        border: solid 3px #a71d2a;
+    }
+    .img-ts{
+        width: 350px;
+        height: 350px;
+    }
+</style>
+<body>
+<div class="container">
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <h2 class="text-danger">Bienvenidos a: "Reservaciones El Hotel Nocturno" </h2>
+    </section>
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+    <div class="contenedor">
+        <img CLASS="img-fluid " src="images/image17.jpg"alt="">
+    </div>
+    </section>
+
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <h1 class="text-danger">Te Ofrecemos Amplia Comodidad</h1>
+            </section>
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <img src="images/image18.jpg" alt=""class="img-ts img-thumbnail alt="" rounded float-xs-left">
+    </section>
+
+    <h5 class="text-danger">Quieres saber como aprobechar tu dinero en una buena Reservacion?</h5>
+    <h5>PRECIOS EN $:</h5>
+        <h6 class="text-danger">Si lo que estas buscando es pasar poco tiempo en Nuestro Hotel El Nocturno, te recomendamos que elijas el que mas te convenga: </h6>
+        <h6>Una Noche: $.10.00</h6>
+        <h6>Mas de una Noche y menos de una semana: $.8.50 c/noche</h6>
+        <h6 class="text-danger">Si lo que estas buscando es pasar mas tiempo en Nuestro Hotel El Nocturno, te recomendamos que elijas el que mas te convenga: </h6>
+        <h6>Una Semana: $49.00</h6>
+        <h6>Mas de una Semana y menos de un Mes: $47.00 c/semana</h6>
+        <h6>Un Mes: $185.00 </h6>
+
+    <img src="images/image13.png" alt=""class="img-ts rounded float-xs-left">
+    <img src="images/image14.jpg" alt=""class="img-ts rounded float-xs-right">
+    <img src="images/image15.jpg" alt=""class="img-ts rounded float-xs-left">
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <h6>1- El servicio de desayuno del que esperan calidad, variedad y reposición.
+
+            2- Servicio y amabilidad en el trato.
+
+            3- Aparcamiento. En ese sentido se hizo hincapié en el precio razonable que pretenden en este tipo de servicio.
+
+            4- Ruido. Insonorización de la habitación y aislamiento acústico de las ventanas.
+
+            5- Tamaño de la habitación, como así también de los baños.
+
+            6- Servicio de Internet.
+
+            7- Limpieza en toda la habitación pero en particular en los cuartos de baño.
+
+            8- Comodidad, en especial en los colchones y en el diseño y la ambientación que pretenden moderna.
+
+            9- Separación de sectores para fumadores y no fumadores para evitar así zonas comunes con olor a tabaco.
+
+            10- Categoría de estrellas. Se pide así que los hoteles respondan a la categoría de estrellas que poseen y, de esta forma, que la relación precio/calidad sea la correcta.</h6>
+    </section>
+
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <h1 class="text-danger"> Reserva tu Habitacion Ahora Mismo</h1>
+    </section>
+
+
+
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <div class="contenedor2">
+
+        </div>
+    </section>
+    <h1> </h1>
+
+
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <div class="contenedor2">
+    <section>
+        <form name="registracion" method="post"action="Textpag.php">
+            Nombre:
+            <input type="text" name="Nombre" id="nombre">
+            Apellido:
+            <input type="text" name="Apellido" id="apellido">
+            No. DPI:
+            <input pattern ="[0-9]{13}" name ="DPI" id="DPI"
+                   title ="inserte correctamente los numeros de su DPI">
+            Telefono:
+            <input pattern ="[0-9]{8}" name ="Telefono" id="telefono"
+                   title ="inserte su numero telefonico">
+            CorreElec:
+            <input type="email" name="Miemail" id="miemail" required>
+                        Rango de Edad:
+            <input type="range" name="Miedad" id="miedad" min="0"
+                   max="80" step="20" value="20">
+            <output id="rango"> 0 a 20   </output>
+
+            Cant. de Noches
+            <input type="number"name="Numero" id="numero" min="0" max="365"
+                   step ="1">
+            <input type="submit" id="send" value="                                                                                                           RESERVAR HABITACION                                                                                               ">
+        </form>
+    </section>
+        </div>
+    </section>
+
+<h1> </h1>
+    <section class="container-fluid slider d-flex justify-content-center align-items-center">
+        <div class="contenedor">
+            <h1> </h1>
+            <h6 class="display-5">No olvides compartir este blog con los amigos</h6>
+        </div>
+    </section>
+
+
+
+
+</div>
+
+<!-- jquery first, then Boostrap Js. -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
+
+
+
+
+
+
